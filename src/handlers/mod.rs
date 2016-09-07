@@ -122,7 +122,7 @@ impl ToJson for Metadata {
     }
 }
 
-pub fn index(articles: &Vec<Article>, _req: &mut Request) -> IronResult<Response> {
+pub fn index(articles: &[Article], _req: &mut Request) -> IronResult<Response> {
     let mut data = HashMap::new();
     data.insert("articles".to_owned(), articles.to_json());
     let mut resp = Response::new();
