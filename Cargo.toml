@@ -4,7 +4,7 @@ version = "0.1.2"
 authors = ["George Rogers <grogers385@gmail.com>"]
 
 [dependencies]
-glob = "*"
+glob = ""
 iron = "*"
 router = "*"
 staticfile = "*"
