@@ -125,7 +125,7 @@ impl ToJson for Metadata {
 pub fn index(articles: &[Article], _req: &mut Request) -> IronResult<Response> {
     let mut resp = Response::new();
     resp.set_mut(status::Ok);
-    resp.set_mut(Template::with("index", articles.to_json()));
+    resp.set_mut(Template::new("index", articles.to_json()));
     Ok(resp)
 }
 
@@ -143,6 +143,6 @@ pub fn article(articles: &HashMap<String, Article>, req: &mut Request) -> IronRe
     let mut resp = Response::new();
     let article = articles.get(slug).unwrap();
     resp.set_mut(status::Ok);
-    resp.set_mut(Template::with("article", article.to_json()));
+    resp.set_mut(Template::new("article", article.to_json()));
     Ok(resp)
 }
