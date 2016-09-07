@@ -9,6 +9,7 @@ use glob::glob;
 use iron::prelude::*;
 use handlebars_iron::{HandlebarsEngine, DirectorySource};
 
+pub mod model;
 pub mod handlers;
 
 pub fn main(on: &str) {
