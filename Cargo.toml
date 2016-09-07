@@ -6,4 +6,5 @@ authors = ["George Rogers <grogers385@gmail.com>"]
 [dependencies]
 iron = "*"
 router = "*"
+staticfile = "*"
 handlebars-iron = "*"
