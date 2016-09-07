@@ -1,6 +1,6 @@
 [package]
 name = "stors"
-version = "0.1.2"
+version = "0.1.3"
 authors = ["George Rogers <grogers385@gmail.com>"]
 
 [dependencies]
