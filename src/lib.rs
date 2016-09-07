@@ -22,7 +22,7 @@ pub fn main(on: &str) {
     let mut x = iron::Chain::new(r);
     let mut hbs = HandlebarsEngine::new();
     hbs.add(Box::new(DirectorySource::new("templates/", ".hbs")));
-    hbs.reload();
+    hbs.reload().unwrap();
     x.link_after(hbs);
     Iron::new(x).http(&on).unwrap();
     println!("Listening on: {}", on);
