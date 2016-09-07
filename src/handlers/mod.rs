@@ -72,6 +72,7 @@ pub fn load_articles<P: Iterator<Item = GlobResult>>(fnames: P) -> Result<Vec<Ar
         let article = try!(load_article(try!(fname.map_err(|e| LoadError::GlobError(e)))));
         articles.push(article);
     }
+    articles.sort_by(|a, b| b.mdata.date.cmp(&a.mdata.date));
     Ok(articles)
 }
 
