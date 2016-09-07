@@ -1,16 +1,9 @@
-use std::io::prelude::*;
-use std::io::BufReader;
-use std::io;
-use std::path::PathBuf;
-use std::fs::File;
 use std::collections::HashMap;
 
-use glob::{GlobResult, GlobError};
 use iron::prelude::*;
 use iron::status;
 use handlebars_iron::{Template};
-use rustc_serialize::json::{DecoderError, Json, ToJson};
-use rustc_serialize::json;
+use rustc_serialize::json::ToJson;
 use router::Router;
 use ::model::*;
 

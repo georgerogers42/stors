@@ -15,8 +15,8 @@ pub mod handlers;
 pub fn main(on: &str) {
     let f = staticfile::Static::new("public");
     let mut r = router::Router::new();
-    let articles = handlers::load_articles(glob("articles/*.html").unwrap()).unwrap();
-    let article_map = handlers::articles_map(&articles);
+    let articles = model::load_articles(glob("articles/*.html").unwrap()).unwrap();
+    let article_map = model::articles_map(&articles);
     r.get("/", move |r: &mut Request| handlers::index(&articles, r), "index");
     r.get("/article/:slug", move |r: &mut Request| handlers::article(&article_map, r), "article");
     r.get("/static/*", f, "static");

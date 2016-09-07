@@ -6,12 +6,8 @@ use std::fs::File;
 use std::collections::HashMap;
 
 use glob::{GlobResult, GlobError};
-use iron::prelude::*;
-use iron::status;
-use handlebars_iron::{Template};
 use rustc_serialize::json::{DecoderError, Json, ToJson};
 use rustc_serialize::json;
-use router::Router;
 
 #[derive(Debug)]
 pub enum LoadError {
